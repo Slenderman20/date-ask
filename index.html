@@ -146,7 +146,7 @@
 <body>
 <main>
   <section id="ask" aria-live="polite">
-    <div class="face" id="face">🥺</div>
+    <div class="face" id="face"></div>
     <h1 id="question">Will you go out with me?</h1>
     <div class="buttons">
       <button id="yes">Yes</button>
@@ -170,7 +170,7 @@
   var FROM = (params.get("from") || "").trim();
 
   var steps = [
-    { face: "🥺", q: TO ? "Will you go out with me, " + TO + "?" : "Will you go out with me?", no: "No" },
+    { face: "", q: TO ? "Will you go out with me, " + TO + "?" : "Will you go out with me?", no: "No" },
     { face: "🤨", q: "Are you sure?", no: "Yes, I'm sure" },
     { face: "🥹", q: "Really sure? Like, really really?", no: "Really sure" },
     { face: "😢", q: "Take a second and think about it.", no: "I thought about it" },
@@ -187,7 +187,7 @@
   // Get a phone notification when she answers.
   // 1) Install the free "ntfy" app and subscribe to a topic name only you know.
   // 2) Put that same topic name between the quotes below.
-  var NTFY_TOPIC = "";
+  var NTFY_TOPIC = "asking-Z-out-2723";
 
   function notify(message) {
     if (!NTFY_TOPIC) return;
